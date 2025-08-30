@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ar">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>روابطي - بطاقة تواصل</title>
+  <!-- ربط ملف الـ CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="card-wrap">
+    <div class="card glow-on" id="card">
+      <div class="avatar-wrap">
+        <div class="avatar" id="avatar">
+          <!-- ضع صورتك هنا -->
+          <img src="489877992_2103213080141785_905819538305382598_n.jpg" alt="الصورة الشخصية" id="avatar-img">
+        </div>
+        <div class="name">sadiq</div>
+      </div>
+
+      <div class="links" id="links">
+        <a class="btn glow" href="https://www.instagram.com/sadiq_.fgh/" target="_blank">📸 instagram</a>
+        <a class="btn glow" href="https://t.me/fgh_sadiq" target="_blank">✉️ telegram</a>
+        <a class="btn glow" href="https://tellonym.me/sadiqfgh" target="_blank">💬 tellonym</a>
+        <a class="btn glow" href="https://x.com/i/flow/login?redirect_after_login=%2Ffgh_sadiq" target="_blank">🐦 X</a>
+      </div>
+
+      <div class="foot">© تم تصميم هذا الموقع من قبل صادق</div>
+    </div>
+  </div>
+
+  <script>
+    // تشغيل / إطفاء التوهج كل 3 ثواني
+    const card = document.getElementById('card');
+    const body = document.body;
+    let on = true;
+    setInterval(() => {
+      on = !on;
+      card.classList.toggle('glow-on', on);
+      body.classList.toggle('bg-red-on', on);
+    }, 3000);
+
+    // جعل الزر كله أحمر عند الضغط
+    const buttons = document.querySelectorAll('.btn');
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        buttons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>
